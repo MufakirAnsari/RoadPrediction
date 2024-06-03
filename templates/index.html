@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Input Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 70%;
+            max-width: 1000px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #007bff;
+        }
+        input[type="number"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+        input[type="number"]:focus {
+            border-color: #007bff;
+        }
+        input[type="submit"] {
+            grid-column: span 3;
+            padding: 15px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Input Data for Prediction</h1>
+        <form action="/predict" method="post">
+            <div class="form-group">
+                <label for="PCR_Year_-1">PCR Year -1:</label>
+                <input type="number" id="PCR_Year_-1" name="PCR_Year_-1" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="Y-1_StrDeduct">Y-1 StrDeduct:</label>
+                <input type="number" id="Y-1_StrDeduct" name="Y-1_StrDeduct" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="Y-1_OtherDeduct">Y-1 OtherDeduct:</label>
+                <input type="number" id="Y-1_OtherDeduct" name="Y-1_OtherDeduct" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="Avg_Treatment_Thickness">Avg. Treatment Thickness:</label>
+                <input type="number" id="Avg_Treatment_Thickness" name="Avg_Treatment_Thickness" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="ADT_TOTAL_NBR">ADT TOTAL NBR:</label>
+                <input type="number" id="ADT_TOTAL_NBR" name="ADT_TOTAL_NBR" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="ADT_TRUCK_NBR">ADT TRUCK NBR:</label>
+                <input type="number" id="ADT_TRUCK_NBR" name="ADT_TRUCK_NBR" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="ADT_PSNGR_CAR_NBR">ADT PSNGR CAR NBR:</label>
+                <input type="number" id="ADT_PSNGR_CAR_NBR" name="ADT_PSNGR_CAR_NBR" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="Avg_Design_AC_Cont_Pct">Avg. Design AC Cont Pct (%):</label>
+                <input type="number" id="Avg_Design_AC_Cont_Pct" name="Avg_Design_AC_Cont_Pct" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="Avg_Rap_AC">Avg. Rap AC:</label>
+                <input type="number" id="Avg_Rap_AC" name="Avg_Rap_AC" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="Avg_Virgin_AC">Avg. Virgin AC:</label>
+                <input type="number" id="Avg_Virgin_AC" name="Avg_Virgin_AC" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="Avg_Stability">Avg. Stability:</label>
+                <input type="number" id="Avg_Stability" name="Avg_Stability" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="Avg_Flow">Avg. Flow:</label>
+                <input type="number" id="Avg_Flow" name="Avg_Flow" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="Avg_VMA">Avg. VMA:</label>
+                <input type="number" id="Avg_VMA" name="Avg_VMA" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="Avg_Air_Void_Pct">Avg. Air Void Pct (%):</label>
+                <input type="number" id="Avg_Air_Void_Pct" name="Avg_Air_Void_Pct" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="Soundness_Loss">Soundness Loss:</label>
+                <input type="number" id="Soundness_Loss" name="Soundness_Loss" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="MicroDeval_Loss">MicroDeval Loss:</label>
+                <input type="number" id="MicroDeval_Loss" name="MicroDeval_Loss" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="ABSORPTION_PCT">ABSORPTION PCT:</label>
+                <input type="number" id="ABSORPTION_PCT" name="ABSORPTION_PCT" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="SSD_SPEC_GRAV">SSD SPEC GRAV:</label>
+                <input type="number" id="SSD_SPEC_GRAV" name="SSD_SPEC_GRAV" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="LA_Abrasion">LA Abrasion:</label>
+                <input type="number" id="LA_Abrasion" name="LA_Abrasion" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="SHALE_A_PCT">SHALE A PCT:</label>
+                <input type="number" id="SHALE_A_PCT" name="SHALE_A_PCT" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="PCRP">PCRP:</label>
+                <input type="number" id="PCRP" name="PCRP" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="SNOW">SNOW:</label>
+                <input type="number" id="SNOW" name="SNOW" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="TAVG">TAVG:</label>
+                <input type="number" id="TAVG" name="TAVG" required>
+            </div>
+            
+            <div class="form-group" style="grid-column: span 3;">
+                <input type="submit" value="Predict">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
